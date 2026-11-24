@@ -1,0 +1,9 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>입구</title></head>
+<body style="margin:0;font-family:sans-serif;text-align:center;padding-top:35vh;background:#14110e;color:#eee">
+<p id="m">이동 중…</p>
+<script>
+fetch('url.txt?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (u) {
+  u = u.trim(); if (!/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(u)) throw 0;
+  location.replace(u + (location.search.indexOf('game') >= 0 ? '/game' : '/'));
+}).catch(function () { document.getElementById('m').textContent = '지금 서버가 꺼져 있어요. 잠시 후 다시 열어 주세요.'; });
+</script></body></html>
