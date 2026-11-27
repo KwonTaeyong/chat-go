@@ -4,6 +4,6 @@
 <script>
 fetch('url.txt?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (u) {
   u = u.trim(); if (!/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(u)) throw 0;
-  var q = location.search; location.replace(u + (q.indexOf('craft') >= 0 ? '/craft' : q.indexOf('game') >= 0 ? '/game' : '/'));
+  var q = location.search; location.replace(u + (q.indexOf('game') >= 0 ? '/game' : '/'));
 }).catch(function () { document.getElementById('m').textContent = '지금 서버가 꺼져 있어요. 잠시 후 다시 열어 주세요.'; });
 </script></body></html>
